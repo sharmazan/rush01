@@ -4,6 +4,8 @@
 4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2
 */
 
+void    check_4(int view_points[4][4], int square[4][4]);
+
 int	char_to_int(char c)
 {
 	int	i;
@@ -58,24 +60,45 @@ int	parse_args(char *arg_str, int view_points[4][4])
 	return (1);
 }
 
+void	zero_square(int square[4][4])
+{
+	int row;
+	int col;
+
+	row = 0;
+	while (row < 4)
+	{
+		col = 0;
+		while (col < 4)
+		{
+			square[row][col] = 0;
+			col++;
+		}
+		row++;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	int	view_points[4][4];
 	int	square[4][4];
 
+	zero_square(square);
 	if (ac != 2 || !parse_args(av[1], view_points))
 	{
 		write(2, "Error\n", 6);
 		return (1);
 	}
+	/*
 	print_array(view_points[0], 4);
 	print_array(view_points[1], 4);
 	print_array(view_points[2], 4);
 	print_array(view_points[3], 4);
-	square[0][0] = 1;
-	square[0][1] = 2;
-	square[0][2] = 3;
-	square[0][3] = 4;
+	*/
+	check_4(view_points, square);
 	print_array(square[0], 4);
+	print_array(square[1], 4);
+	print_array(square[2], 4);
+	print_array(square[3], 4);
 	return (0);
 }
