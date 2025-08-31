@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-int char_to_int(char c)
+int	char_to_int(char c)
 {
 	int	i;
 
