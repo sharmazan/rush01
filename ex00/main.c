@@ -4,7 +4,9 @@
 4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2
 */
 
-void    check_4(int view_points[4][4], int square[4][4]);
+void check_4(int view_points[4][4], int square[4][4]);
+void check_2(int view_points[4][4], int square[4][4]);
+void check_1(int view_points[4][4], int square[4][4]);
 
 int	char_to_int(char c)
 {
@@ -89,13 +91,15 @@ int	main(int ac, char **av)
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	/*
+	// /*
 	print_array(view_points[0], 4);
 	print_array(view_points[1], 4);
 	print_array(view_points[2], 4);
 	print_array(view_points[3], 4);
-	*/
+	// */
 	check_4(view_points, square);
+	check_1(view_points, square);
+	check_2(view_points, square);
 	print_array(square[0], 4);
 	print_array(square[1], 4);
 	print_array(square[2], 4);
